@@ -18,4 +18,19 @@ class CalculatorSpec extends Specification {
         3  | 1  | 2
         0  | 1  | -1
     }
+
+    @Unroll
+    def "returns #c to subtract #b from #a"() {
+        setup:
+        def cut = new Calculator()
+
+        expect:
+        cut.subtract(a,b) == c
+
+        where:
+        c  | a  | b
+        2  | 3  | 1
+        0  | 1  | 1
+        2  | 1  | -1
+    }
 }
