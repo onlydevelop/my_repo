@@ -12,6 +12,9 @@ repositories {
     jcenter()
     mavenLocal()
     mavenCentral()
+    maven {
+        url = uri("https://d1osg35nybn3tt.cloudfront.net")
+    }
 }
 
 dependencies {
@@ -19,6 +22,7 @@ dependencies {
     testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
     testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
     testRuntime 'com.athaydes:spock-reports:1.2.7'
+    implementation 'com.amazonaws:codeguru-profiler-java-agent:0.1.0'
 }
 
 testlogger {
