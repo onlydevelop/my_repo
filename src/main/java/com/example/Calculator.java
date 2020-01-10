@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.File;  // Import the File class
 
 public class Calculator {
     public int add(int a, int b) {
@@ -19,6 +20,13 @@ public class Calculator {
             e.printStackTrace();
         }
 
+        File myObj = new File("filename.txt");
+        if (myObj.delete()) {
+            System.out.println("Deleted the file: " + myObj.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+        
         return a - b;
     }
 }
